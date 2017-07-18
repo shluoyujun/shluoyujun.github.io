@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="mysql中, join, left join, right join都可以将两张表连接起来，但如果表中的数据太多，例如两张表中都有1000w+的数据，直接join一定会出错。 一种批量处理的方法是，每次从一张表中load若干行数据（limit m,n），和另一张做join, 结果保存到一张新表里。可以写一个程序或脚本来处理，基本语句如下：12345678sql1 = &amp;quot;insert i">
+<meta name="description" content="mysql中, join, left join, right join都可以将两张表连接起来，但如果表中的数据太多，例如两张表中都有1000w+的数据，直接join一定会出错。">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql一种千万数量级表的join方法">
 <meta property="og:url" content="http://yoursite.com/2017/07/18/mysql一种千万数量级表的join方法/index.html">
 <meta property="og:site_name" content="Luo&#39;s space">
-<meta property="og:description" content="mysql中, join, left join, right join都可以将两张表连接起来，但如果表中的数据太多，例如两张表中都有1000w+的数据，直接join一定会出错。 一种批量处理的方法是，每次从一张表中load若干行数据（limit m,n），和另一张做join, 结果保存到一张新表里。可以写一个程序或脚本来处理，基本语句如下：12345678sql1 = &amp;quot;insert i">
-<meta property="og:updated_time" content="2017-07-18T12:26:40.369Z">
+<meta property="og:description" content="mysql中, join, left join, right join都可以将两张表连接起来，但如果表中的数据太多，例如两张表中都有1000w+的数据，直接join一定会出错。">
+<meta property="og:updated_time" content="2017-07-18T12:27:49.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql一种千万数量级表的join方法">
-<meta name="twitter:description" content="mysql中, join, left join, right join都可以将两张表连接起来，但如果表中的数据太多，例如两张表中都有1000w+的数据，直接join一定会出错。 一种批量处理的方法是，每次从一张表中load若干行数据（limit m,n），和另一张做join, 结果保存到一张新表里。可以写一个程序或脚本来处理，基本语句如下：12345678sql1 = &amp;quot;insert i">
+<meta name="twitter:description" content="mysql中, join, left join, right join都可以将两张表连接起来，但如果表中的数据太多，例如两张表中都有1000w+的数据，直接join一定会出错。">
 
 
 
@@ -363,8 +363,7 @@
       
 
       
-        <p>mysql中, join, left join, right join都可以将两张表连接起来，但如果表中的数据太多，例如两张表中都有1000w+的数据，直接join一定会出错。</p>
-<p>一种批量处理的方法是，每次从一张表中load若干行数据（limit m,n），和另一张做join, 结果保存到一张新表里。<br>可以写一个程序或脚本来处理，基本语句如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sql1 = &quot;insert ignore into QA select t.id,t.title, t.body, Answers.body,t.tags from (select Questions.id,Questions.title,Questions.body,Questions.answerid,Questions.tags from Questions limit &quot;</div><div class="line">sql2 = &quot;,10000) as t left join Answers on t.answerid=Answers.id&quot;</div><div class="line">i=0</div><div class="line">while(i&lt;maxlen):</div><div class="line">	exesql=sql1+str(i)+sql2</div><div class="line">	i=i+10000</div><div class="line">	cur.execute(exesql)</div><div class="line">	conn.commit()</div></pre></td></tr></table></figure></p>
+        <p>mysql中, join, left join, right join都可以将两张表连接起来，但如果表中的数据太多，例如两张表中都有1000w+的数据，直接join一定会出错。<br><a id="more"></a><br>一种批量处理的方法是，每次从一张表中load若干行数据（limit m,n），和另一张做join, 结果保存到一张新表里。<br>可以写一个程序或脚本来处理，基本语句如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sql1 = &quot;insert ignore into QA select t.id,t.title, t.body, Answers.body,t.tags from (select Questions.id,Questions.title,Questions.body,Questions.answerid,Questions.tags from Questions limit &quot;</div><div class="line">sql2 = &quot;,10000) as t left join Answers on t.answerid=Answers.id&quot;</div><div class="line">i=0</div><div class="line">while(i&lt;maxlen):</div><div class="line">	exesql=sql1+str(i)+sql2</div><div class="line">	i=i+10000</div><div class="line">	cur.execute(exesql)</div><div class="line">	conn.commit()</div></pre></td></tr></table></figure></p>
 
       
     </div>
