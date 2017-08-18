@@ -363,20 +363,14 @@
 
       
         
-          
-            <a id="more"></a> 
-<h1 id="登陆mysql查看数据存储路径"><a href="#登陆mysql查看数据存储路径" class="headerlink" title="登陆mysql查看数据存储路径"></a>登陆mysql查看数据存储路径</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql -uroot -p</div><div class="line">show variables like &apos;%datadir%&apos;;</div></pre></td></tr></table></figure>
-<p>建立新的存储路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p /data/mysql</div></pre></td></tr></table></figure></p>
-<p>复制原有的数据到新的存储路径（不要用mv！）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp -R /var/lib/mysql/. /data/mysql  #如果有隐藏文件要用.，不能用*</div></pre></td></tr></table></figure></p>
-<p>修改文件夹权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R mysql:mysql /data/mysql</div></pre></td></tr></table></figure></p>
-<p>修改配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/mysql/my.cnf</div></pre></td></tr></table></figure></p>
-<p>修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">datadir = /data/mysql</div></pre></td></tr></table></figure></p>
-<p>修改启动文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apparmor.d/usr.sbin.mysqld</div></pre></td></tr></table></figure></p>
-<p>修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/var/lib/mysql r,</div><div class="line">/var/lib/mysql/** rwk,</div></pre></td></tr></table></figure></p>
-<p>为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/data/mysql r,</div><div class="line">/data/mysql/** rwk,</div></pre></td></tr></table></figure></p>
-<p>重启服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/apparmor restart</div><div class="line">sudo /etc/init.d/mysql restart</div></pre></td></tr></table></figure>
-          
+          <h1 id="登陆mysql查看数据存储路径"><a href="#登陆mysql查看数据存储路径" class="headerlink" title="登陆mysql查看数据存储路径"></a>登陆mysql查看数据存储路径</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql -uroot -p</div><div class="line">show variables like &apos;%datadir%&apos;;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/18/ubuntu系统mysql修改数据存储位置/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
