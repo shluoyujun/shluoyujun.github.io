@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/05/docker常用命令/index.html">
 <meta property="og:site_name" content="Luo&#39;s space">
 <meta property="og:description" content="docker的安装以及一些配置参考1https://github.com/widuu/chinese_docker/blob/master/installation/ubuntu.md#Ubuntu%E5%AE%89%E8%A3%85Docker">
-<meta property="og:updated_time" content="2017-08-18T12:41:13.470Z">
+<meta property="og:updated_time" content="2017-08-18T13:17:13.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker常用命令">
 <meta name="twitter:description" content="docker的安装以及一些配置参考1https://github.com/widuu/chinese_docker/blob/master/installation/ubuntu.md#Ubuntu%E5%AE%89%E8%A3%85Docker">
@@ -369,7 +369,7 @@
 <p>或者解除挂载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo umount  /dev/vdc /work</div></pre></td></tr></table></figure></p>
 <p>查看挂载情况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df -h</div></pre></td></tr></table></figure></p>
 <p>可参考<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://gist.github.com/gaoyifan/019ad7766f030ab5be50</div></pre></td></tr></table></figure></p>
-<p>更改镜像和容器的保持路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo docker info | grep &quot;Docker Root Dir&quot; 查看存储位置</div><div class="line">sudo vi /etc/default/docker</div></pre></td></tr></table></figure></p>
+<p>更改镜像和容器的保存路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo docker info | grep &quot;Docker Root Dir&quot; 查看存储位置</div><div class="line">sudo vi /etc/default/docker</div></pre></td></tr></table></figure></p>
 <p>添加一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">DOCKER_OPTS=&quot;-g /mnt/docker&quot;</div><div class="line">sudo service docker restart</div></pre></td></tr></table></figure></p>
 <p>查看docker信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker info</div></pre></td></tr></table></figure></p>
 <p>查看运行中的容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps</div></pre></td></tr></table></figure></p>
