@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="最近在跑论文实验，经常需要进行一些文本的存储和转移，一般都是用python写个脚本来处理。在这个过程中大的问题还没遇到过，但一些小坑还是经常会踩，而且好几次明明是上次遇到过但又忘了，解决的过程还是很浪费时间的。所以把它们记录下来，避免下次遇到类似情况的时候还要去查。 感觉python3.x对中文还是比较友好的。 1、关于Windows记事本的ANSI,Unicode,UTF-8三种编码模式看了一篇">
+<meta name="description" content="最近在跑论文实验，经常需要进行一些文本的存储和转移，一般都是用python写个脚本来处理。在这个过程中大的问题还没遇到过，但一些小坑还是经常会踩，而且好几次明明是上次遇到过但又忘了，解决的过程还是很浪费时间的。所以把它们记录下来，避免下次遇到类似情况的时候还要去查。 感觉python3.x对中文还是比较友好的。 1 关于Windows记事本的ANSI,Unicode,UTF-8三种编码模式看了一篇">
 <meta name="keywords" content="tool">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记事本编码问题小记">
 <meta property="og:url" content="http://yoursite.com/2017/04/02/记事本编码问题小记/index.html">
 <meta property="og:site_name" content="Luo&#39;s space">
-<meta property="og:description" content="最近在跑论文实验，经常需要进行一些文本的存储和转移，一般都是用python写个脚本来处理。在这个过程中大的问题还没遇到过，但一些小坑还是经常会踩，而且好几次明明是上次遇到过但又忘了，解决的过程还是很浪费时间的。所以把它们记录下来，避免下次遇到类似情况的时候还要去查。 感觉python3.x对中文还是比较友好的。 1、关于Windows记事本的ANSI,Unicode,UTF-8三种编码模式看了一篇">
-<meta property="og:updated_time" content="2017-07-18T12:34:13.858Z">
+<meta property="og:description" content="最近在跑论文实验，经常需要进行一些文本的存储和转移，一般都是用python写个脚本来处理。在这个过程中大的问题还没遇到过，但一些小坑还是经常会踩，而且好几次明明是上次遇到过但又忘了，解决的过程还是很浪费时间的。所以把它们记录下来，避免下次遇到类似情况的时候还要去查。 感觉python3.x对中文还是比较友好的。 1 关于Windows记事本的ANSI,Unicode,UTF-8三种编码模式看了一篇">
+<meta property="og:updated_time" content="2018-06-23T14:42:50.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记事本编码问题小记">
-<meta name="twitter:description" content="最近在跑论文实验，经常需要进行一些文本的存储和转移，一般都是用python写个脚本来处理。在这个过程中大的问题还没遇到过，但一些小坑还是经常会踩，而且好几次明明是上次遇到过但又忘了，解决的过程还是很浪费时间的。所以把它们记录下来，避免下次遇到类似情况的时候还要去查。 感觉python3.x对中文还是比较友好的。 1、关于Windows记事本的ANSI,Unicode,UTF-8三种编码模式看了一篇">
+<meta name="twitter:description" content="最近在跑论文实验，经常需要进行一些文本的存储和转移，一般都是用python写个脚本来处理。在这个过程中大的问题还没遇到过，但一些小坑还是经常会踩，而且好几次明明是上次遇到过但又忘了，解决的过程还是很浪费时间的。所以把它们记录下来，避免下次遇到类似情况的时候还要去查。 感觉python3.x对中文还是比较友好的。 1 关于Windows记事本的ANSI,Unicode,UTF-8三种编码模式看了一篇">
 
 
 
@@ -365,12 +365,12 @@
       
         <p>最近在跑论文实验，经常需要进行一些文本的存储和转移，一般都是用python写个脚本来处理。在这个过程中大的问题还没遇到过，但一些小坑还是经常会踩，而且好几次明明是上次遇到过但又忘了，解决的过程还是很浪费时间的。所以把它们记录下来，避免下次遇到类似情况的时候还要去查。</p>
 <p>感觉python3.x对中文还是比较友好的。</p>
-<p>1、关于Windows记事本的ANSI,Unicode,UTF-8三种编码模式<br>看了一篇知乎的回答，感觉讲的很明白。<a href="https://www.zhihu.com/question/20650946" target="_blank" rel="external">https://www.zhihu.com/question/20650946</a><br>ANSI：对应当前系统 locale 的遗留（legacy）编码。<br>Unicode:带有 BOM 的小端序 UTF-16。<br>UTF-8:带 BOM 的 UTF-8.<br><a id="more"></a><br>注：所谓BOM，即字节序标记(Byte Order Mark)，是Unicode规范中的概念，Windows就是使用BOM来标记文本文件的编码方式的。</p>
-<p>之前以为把txt文件保存为UTF-8就万事大吉了，直到用Python把txt中的内容读出并print出来后发现每个文件内容开头都有一个“ufeff”字符串，查了之后才知道原来记事本保存的UTF-8是带BOM的UTF-8。这个小问题有什么还是会影响文本处理的，解决的办法是用专业的文本编辑器打开，然后保存为不带BOM的UTF-8格式。如果要批处理的话到网上下个小程序好了。</p>
+<p>1 关于Windows记事本的ANSI,Unicode,UTF-8三种编码模式<br>看了一篇知乎的回答，感觉讲的很明白。<a href="https://www.zhihu.com/question/20650946" target="_blank" rel="external">https://www.zhihu.com/question/20650946</a><br>ANSI：对应当前系统 locale 的遗留（legacy）编码。<br>Unicode:带有 BOM 的小端序 UTF-16。<br>UTF-8:带 BOM 的 UTF-8.<br><a id="more"></a><br>注：所谓BOM，即字节序标记(Byte Order Mark)，是Unicode规范中的概念，Windows就是使用BOM来标记文本文件的编码方式的。</p>
+<p>之前以为把txt文件保存为UTF-8就万事大吉了，直到用Python把txt中的内容读出并print出来后发现每个文件内容开头都有一个“ufeff”字符串，查了之后才知道原来记事本保存的UTF-8是带BOM的UTF-8。这个小问题有时候还是会影响文本处理的，解决的办法是用专业的文本编辑器打开，然后保存为不带BOM的UTF-8格式。如果要批处理的话到网上下个小程序好了。</p>
 <p>知乎回答中说UTF-8是兼容性最好的编码，为解决Window的BOM问题建议尽量用专业文本编辑器不要用记事本。</p>
 <p>转载：<br>ASCII是古老的编码，那个时候还不区分字符集和编码，基本可以看作合二为一的东西。<br>Unicode严格来说是字符集，可以有多种编码。<br>UTF-8是一种Unicode的编码。</p>
-<p>2、txt文件编码批量转换<br>之前有时候需要进行一些文件的批量转码，比如ANSI转UTF-8，不过既然记事本的UTF-8编码是带BOM的这好像也没什么用了，还是用其他工具来转化吧。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">of=open(openFilePath,&quot;r&quot;,encoding=&apos;gb18030&apos;)</div><div class="line">sf=open(saveFilePath,&quot;w&quot;,encoding=&quot;utf-8&quot;)</div><div class="line">sf.write(of.read())</div></pre></td></tr></table></figure></p>
-<p>3、文件夹中文件的遍历<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import ps</div><div class="line">path=&apos;xxx&apos;</div><div class="line">files=os.listdir(path)</div><div class="line">for file in files:</div><div class="line">	f=open(path+file,&apos;r&apos;,encoding=&apos;utf-8&apos;)</div><div class="line">	xxx</div></pre></td></tr></table></figure></p>
+<p>2 txt文件编码批量转换<br>之前有时候需要进行一些文件的批量转码，比如ANSI转UTF-8，不过既然记事本的UTF-8编码是带BOM的这好像也没什么用了，还是用其他工具来转化吧。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">of=open(openFilePath,&quot;r&quot;,encoding=&apos;gb18030&apos;)</div><div class="line">sf=open(saveFilePath,&quot;w&quot;,encoding=&quot;utf-8&quot;)</div><div class="line">sf.write(of.read())</div></pre></td></tr></table></figure></p>
+<p>3 文件夹中文件的遍历<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import ps</div><div class="line">path=&apos;xxx&apos;</div><div class="line">files=os.listdir(path)</div><div class="line">for file in files:</div><div class="line">	f=open(path+file,&apos;r&apos;,encoding=&apos;utf-8&apos;)</div><div class="line">	xxx</div></pre></td></tr></table></figure></p>
 
       
     </div>
