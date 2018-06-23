@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/05/docker常用命令/index.html">
 <meta property="og:site_name" content="Luo&#39;s space">
 <meta property="og:description" content="docker的安装以及一些配置参考1https://github.com/widuu/chinese_docker/blob/master/installation/ubuntu.md#Ubuntu%E5%AE%89%E8%A3%85Docker">
-<meta property="og:updated_time" content="2017-08-23T14:52:11.150Z">
+<meta property="og:updated_time" content="2018-06-23T14:31:42.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker常用命令">
 <meta name="twitter:description" content="docker的安装以及一些配置参考1https://github.com/widuu/chinese_docker/blob/master/installation/ubuntu.md#Ubuntu%E5%AE%89%E8%A3%85Docker">
@@ -382,10 +382,7 @@
 <p>进入一个容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker exec -i -t $dockername /bin/sh</div></pre></td></tr></table></figure></p>
 <p>docker run的参数说明，例如有用命令启动一个容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --name $&quot;dDocker&quot; -d -p 8080:8888 -v /home/tensorflow:/home/jovyan/work jupyter/tensorflow-notebook start-notebook.sh --NotebookApp.token=&apos;&apos;</div></pre></td></tr></table></figure></p>
 <p>–name 为容器指定一个名字，如果未指定会随机分配<br>-d 保持后台运行<br>-p 8080:8888 端口映射，8080是宿主机器的端口号，8888是docker端口号，访问时输入 [宿主机器ip：8080]<br>-v /home/tensorflow:/work/jovnan 目录映射，可以理解为共享目录。docker容器是临时的，这个参数为了是代码和数据持久化保存。<br>jupyter/tensorflow-notebook 镜像名称，如果本地不存在，docker会自动从hub.docker.com上获取</p>
-<p>常见问题：</p>
-<ol>
-<li>Couldn’t connect to Docker daemon at http+unix://var/run/docker.sock - is it running?<br>有次重启虚拟机后突然遇到这个问题，解决方法：</li>
-</ol>
+<p>常见问题：<br>1 Couldn’t connect to Docker daemon at http+unix://var/run/docker.sock - is it running?<br>有次重启虚拟机后突然遇到这个问题，解决方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/default/docker</div></pre></td></tr></table></figure>
 <p>添加一行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DOCKER_OPTS=&quot;-H tcp://127.0.0.1:4243 -H unix:///var/run/docker.sock&quot;</div></pre></td></tr></table></figure>
