@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://i4.buimg.com/4851/5aa0b41fc757410e.png">
 <meta property="og:image" content="http://i4.buimg.com/4851/d37f161f8918df45.png">
 <meta property="og:image" content="http://i4.buimg.com/4851/22e55d515aa09e6f.png">
-<meta property="og:updated_time" content="2017-07-18T13:43:26.922Z">
+<meta property="og:updated_time" content="2018-06-23T14:30:39.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="eclipse导入maven web项目注意事项">
 <meta name="twitter:description" content="eclipse导入已经存在的maven web项目还需要进行一些简单的配置，这里记录一下可能遇到的情况。 导入方法：File -&amp;gt; Import -&amp;gt; Maven -&amp;gt; Existing Maven Projects 导入过程可能的报错及解决方法">
@@ -369,12 +369,12 @@
       
         <p>eclipse导入已经存在的maven web项目还需要进行一些简单的配置，这里记录一下可能遇到的情况。</p>
 <p>导入方法：<br>File -&gt; Import -&gt; Maven -&gt; Existing Maven Projects</p>
-<p>导入过程可能的报错及解决方法<br><a id="more"></a><br>1、    pom.xml<br>报错：Plugin execution not covered by lifecycle configuration<br>解决方法：在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;和&lt;plugins&gt;</div></pre></td></tr></table></figure></p>
+<p>导入过程可能的报错及解决方法<br><a id="more"></a><br>1 pom.xml<br>报错：Plugin execution not covered by lifecycle configuration<br>解决方法：在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;和&lt;plugins&gt;</div></pre></td></tr></table></figure></p>
 <p>之间加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;pluginManagement&gt;</div></pre></td></tr></table></figure></p>
 <p>如果build出错，在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;&lt;/build&gt;</div></pre></td></tr></table></figure></p>
 <p>之间找个地方加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;defaultGoal&gt;compile&lt;/defaultGoal&gt;</div></pre></td></tr></table></figure></p>
-<p>2、    环境问题<br>出现的错误如下<br><img src="http://i4.buimg.com/4851/5aa0b41fc757410e.png" alt=""><br>解决方法：<br>(1) Properties -&gt; Java Build Path<br>    修改JRE版本为1.8<br>(2) Properties -&gt;JavaCompiler<br>    看一下Compiler compliance level 的版本是否为1.8，如果不是修改为1.8<br>(3) Properties -&gt; Project Facets<br>    勾选Danamic Web Module Versions为3.0<br>    勾选Java为 1.8<br>    如下图所示：<br>    <img src="http://i4.buimg.com/4851/d37f161f8918df45.png" alt=""><br>(4) Properties -&gt; Deployment Assembly<br>    查看是否有加入Maven Dependencies以及对应的路径是否一样<br>    示例：<br>    <img src="http://i4.buimg.com/4851/22e55d515aa09e6f.png" alt=""></p>
-<p>3、如果发现Properties中没有Deployment Assembly<br>解决方法：<br>(1) 在该项目的工作区文件夹找到.project文件,用文本编辑器打开<br>(2) 在文件内添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;nature&gt;org.eclipse.wst.common.modulecore.ModuleCoreNature&lt;/nature&gt;</div></pre></td></tr></table></figure></p>
+<p>2 环境问题<br>出现的错误如下<br><img src="http://i4.buimg.com/4851/5aa0b41fc757410e.png" alt=""><br>解决方法：<br>(1) Properties -&gt; Java Build Path<br>    修改JRE版本为1.8<br>(2) Properties -&gt;JavaCompiler<br>    看一下Compiler compliance level 的版本是否为1.8，如果不是修改为1.8<br>(3) Properties -&gt; Project Facets<br>    勾选Danamic Web Module Versions为3.0<br>    勾选Java为 1.8<br>    如下图所示：<br>    <img src="http://i4.buimg.com/4851/d37f161f8918df45.png" alt=""><br>(4) Properties -&gt; Deployment Assembly<br>    查看是否有加入Maven Dependencies以及对应的路径是否一样<br>    示例：<br>    <img src="http://i4.buimg.com/4851/22e55d515aa09e6f.png" alt=""></p>
+<p>3 如果发现Properties中没有Deployment Assembly<br>解决方法：<br>(1) 在该项目的工作区文件夹找到.project文件,用文本编辑器打开<br>(2) 在文件内添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;nature&gt;org.eclipse.wst.common.modulecore.ModuleCoreNature&lt;/nature&gt;</div></pre></td></tr></table></figure></p>
 <p>(3) 重启eclipse可以在Properties中看到Deployment Assembly</p>
 <p>以上配置好之后可以试着Run as -&gt; Run On Server,看是否能在tomcat中跑起来。</p>
 
