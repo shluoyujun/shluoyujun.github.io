@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ubuntu,python,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,13 @@
 
 
 
-<meta name="description" content="1 安装virtualenv(1) 安装pip 123sudo apt-get updatesudo apt-get upgradesudo apt-get install python-pip">
-<meta name="keywords" content="ubuntu,python">
-<meta property="og:type" content="article">
-<meta property="og:title" content="python开发环境配置">
-<meta property="og:url" content="http://yoursite.com/2018/06/23/python开发环境配置/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Luo&#39;s space">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Luo&#39;s space">
-<meta property="og:description" content="1 安装virtualenv(1) 安装pip 123sudo apt-get updatesudo apt-get upgradesudo apt-get install python-pip">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-02T12:29:18.800Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python开发环境配置">
-<meta name="twitter:description" content="1 安装virtualenv(1) 安装pip 123sudo apt-get updatesudo apt-get upgradesudo apt-get install python-pip">
+<meta name="twitter:title" content="Luo&#39;s space">
 
 
 
@@ -120,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/23/python开发环境配置/">
+  <link rel="canonical" href="http://yoursite.com/page/2/">
 
 
 
 
 
-  <title>python开发环境配置 | Luo's space</title>
+  <title>Luo's space</title>
   
 
 
@@ -145,7 +140,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,9 +244,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -263,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/python开发环境配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/16/ubuntu14-04安装fasttext/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="luoyujun">
@@ -280,7 +276,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python开发环境配置</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/16/ubuntu14-04安装fasttext/" itemprop="url">ubuntu14.04安装fasttext</a></h1>
         
 
         <div class="post-meta">
@@ -292,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T22:03:36+08:00">
-                2018-06-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-16T22:40:06+08:00">
+                2017-06-16
               </time>
             
 
@@ -352,29 +350,16 @@
       
 
       
-        <p>1 安装virtualenv<br>(1) 安装pip</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line">sudo apt-get install python-pip</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>(2) 安装virtualenv</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-virtualenv</span><br></pre></td></tr></table></figure>
-<p>(3) 创建不同版本python环境<br>进入需要虚拟化环境的目录，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home/yujluo</span><br></pre></td></tr></table></figure>
-<p>运行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -p /usr/bin/python3 py3env</span><br></pre></td></tr></table></figure>
-<p>-p指定python版本 py3env为虚拟的环境目录</p>
-<p>激活环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /home/yujluo/py3env/activate</span><br></pre></td></tr></table></figure>
-<p>退出环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
-<p>2 使用jupyter notebook</p>
-<p>(1) 安装jupyter notebook<br>pip install jupyter notebook</p>
-<p>(2) 开启notebook<br>进入工作目录，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home/yujluo</span><br></pre></td></tr></table></figure>
-<p>开启服务<br>jupyter notebook</p>
-<p>(3) 远程访问jupyter notebook<br>最简单的是从本地建立一个ssh通道到服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh &lt;用户名&gt;@&lt;ip地址&gt; -L127.0.0.1:1234:127.0.0.1:8888</span><br></pre></td></tr></table></figure>
-<p>然后再本浏览器输入localhost:1234再在服务器上记下token输入就可以使用了。</p>
-
+        
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-numpy</span><br><span class="line">sudo apt-get install python-scipy</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/16/ubuntu14-04安装fasttext/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -389,42 +374,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
-          
-            <a href="/tags/python/" rel="tag"># python</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/08/18/ubuntu系统mysql修改数据存储位置/" rel="next" title="ubuntu mysql修改数据存储位置">
-                <i class="fa fa-chevron-left"></i> ubuntu mysql修改数据存储位置
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/02/Hexo多设备同步/" rel="prev" title="Hexo+Github多设备同步">
-                Hexo+Github多设备同步 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -434,11 +391,310 @@
   </article>
 
 
-
-    <div class="post-spread">
+    
       
-    </div>
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/29/eclipse导入maven-web项目注意事项/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="luoyujun">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luo's space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/29/eclipse导入maven-web项目注意事项/" itemprop="url">eclipse导入maven web项目注意事项</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-29T15:02:06+08:00">
+                2017-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/environment/" itemprop="url" rel="index">
+                    <span itemprop="name">environment</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>eclipse导入已经存在的maven web项目还需要进行一些简单的配置，这里记录一下可能遇到的情况。</p>
+<p>导入方法：<br>File -&gt; Import -&gt; Maven -&gt; Existing Maven Projects</p>
+<p>导入过程可能的报错及解决方法<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/29/eclipse导入maven-web项目注意事项/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/02/记事本编码问题小记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="luoyujun">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Luo's space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/02/记事本编码问题小记/" itemprop="url">记事本编码问题小记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-02T16:21:52+08:00">
+                2017-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/environment/" itemprop="url" rel="index">
+                    <span itemprop="name">environment</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近在跑论文实验，经常需要进行一些文本的存储和转移，一般都是用python写个脚本来处理。在这个过程中大的问题还没遇到过，但一些小坑还是经常会踩，而且好几次明明是上次遇到过但又忘了，解决的过程还是很浪费时间的。所以把它们记录下来，避免下次遇到类似情况的时候还要去查。</p>
+<p>感觉python3.x对中文还是比较友好的。</p>
+<p>1 关于Windows记事本的ANSI,Unicode,UTF-8三种编码模式<br>看了一篇知乎的回答，感觉讲的很明白。<a href="https://www.zhihu.com/question/20650946" target="_blank" rel="noopener">https://www.zhihu.com/question/20650946</a><br>ANSI：对应当前系统 locale 的遗留（legacy）编码。<br>Unicode:带有 BOM 的小端序 UTF-16。<br>UTF-8:带 BOM 的 UTF-8.<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/02/记事本编码问题小记/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -446,10 +702,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -671,10 +923,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

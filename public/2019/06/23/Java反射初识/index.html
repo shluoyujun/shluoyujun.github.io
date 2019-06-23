@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ubuntu,python,">
+  <meta name="keywords" content="java,reflect,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1 安装virtualenv(1) 安装pip 123sudo apt-get updatesudo apt-get upgradesudo apt-get install python-pip">
-<meta name="keywords" content="ubuntu,python">
+<meta name="description" content="学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址https://www.imooc.com/learn/199 ＃Class的使用Java中静态成员和基本数据类型不是对象，其他都是对象类是java.lang.Class类的实例对象 实例对象的三种获取方式Foo foo = new Foo();Class c1 = Foo.clas">
+<meta name="keywords" content="java,reflect">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python开发环境配置">
-<meta property="og:url" content="http://yoursite.com/2018/06/23/python开发环境配置/index.html">
+<meta property="og:title" content="Java反射初识">
+<meta property="og:url" content="http://yoursite.com/2019/06/23/Java反射初识/index.html">
 <meta property="og:site_name" content="Luo&#39;s space">
-<meta property="og:description" content="1 安装virtualenv(1) 安装pip 123sudo apt-get updatesudo apt-get upgradesudo apt-get install python-pip">
+<meta property="og:description" content="学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址https://www.imooc.com/learn/199 ＃Class的使用Java中静态成员和基本数据类型不是对象，其他都是对象类是java.lang.Class类的实例对象 实例对象的三种获取方式Foo foo = new Foo();Class c1 = Foo.clas">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-02T12:29:18.800Z">
+<meta property="og:updated_time" content="2019-06-23T14:09:23.849Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python开发环境配置">
-<meta name="twitter:description" content="1 安装virtualenv(1) 安装pip 123sudo apt-get updatesudo apt-get upgradesudo apt-get install python-pip">
+<meta name="twitter:title" content="Java反射初识">
+<meta name="twitter:description" content="学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址https://www.imooc.com/learn/199 ＃Class的使用Java中静态成员和基本数据类型不是对象，其他都是对象类是java.lang.Class类的实例对象 实例对象的三种获取方式Foo foo = new Foo();Class c1 = Foo.clas">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/23/python开发环境配置/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/23/Java反射初识/">
 
 
 
 
 
-  <title>python开发环境配置 | Luo's space</title>
+  <title>Java反射初识 | Luo's space</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/python开发环境配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/23/Java反射初识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="luoyujun">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python开发环境配置</h1>
+          <h1 class="post-title" itemprop="name headline">Java反射初识</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T22:03:36+08:00">
-                2018-06-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-23T20:14:21+08:00">
+                2019-06-23
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/environment/" itemprop="url" rel="index">
-                    <span itemprop="name">environment</span>
+                  <a href="/categories/developing/" itemprop="url" rel="index">
+                    <span itemprop="name">developing</span>
                   </a>
                 </span>
 
@@ -352,28 +352,16 @@
       
 
       
-        <p>1 安装virtualenv<br>(1) 安装pip</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line">sudo apt-get install python-pip</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>(2) 安装virtualenv</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-virtualenv</span><br></pre></td></tr></table></figure>
-<p>(3) 创建不同版本python环境<br>进入需要虚拟化环境的目录，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home/yujluo</span><br></pre></td></tr></table></figure>
-<p>运行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -p /usr/bin/python3 py3env</span><br></pre></td></tr></table></figure>
-<p>-p指定python版本 py3env为虚拟的环境目录</p>
-<p>激活环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /home/yujluo/py3env/activate</span><br></pre></td></tr></table></figure>
-<p>退出环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
-<p>2 使用jupyter notebook</p>
-<p>(1) 安装jupyter notebook<br>pip install jupyter notebook</p>
-<p>(2) 开启notebook<br>进入工作目录，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home/yujluo</span><br></pre></td></tr></table></figure>
-<p>开启服务<br>jupyter notebook</p>
-<p>(3) 远程访问jupyter notebook<br>最简单的是从本地建立一个ssh通道到服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh &lt;用户名&gt;@&lt;ip地址&gt; -L127.0.0.1:1234:127.0.0.1:8888</span><br></pre></td></tr></table></figure>
-<p>然后再本浏览器输入localhost:1234再在服务器上记下token输入就可以使用了。</p>
+        <p>学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址<a href="https://www.imooc.com/learn/199" target="_blank" rel="noopener">https://www.imooc.com/learn/199</a></p>
+<p>＃Class的使用<br>Java中静态成员和基本数据类型不是对象，其他都是对象<br>类是java.lang.Class类的实例对象</p>
+<p>实例对象的三种获取方式<br>Foo foo = new Foo();<br>Class c1 = Foo.class;<br>Class c2 = foo.getClass();<br>Class c3 = Class.forName(“xx.xx.xx.Foo”);<br>c1,c2,c3称为Foo类的类类型<br>可以通过类类型创建对象, 类需要有无参数的构造方法<br>Foo foo = (Foo)c1.newInsatance();</p>
+<p>＃动态加载类<br>区分编译和运行<br>静态加载类　<br>Foo foo = new Foo();<br>动态加载类<br>Class.forName(“类全称”）<br>编译时刻加载类是静态加载类，运行时刻加载类是动态加载类</p>
+<p>如果一个类中涉及到多个类，此时将多个类向上提取接口（众类实现该接口），然后通过动态加载类的方式在运行的时候才创建对象不用的不需要编译就不会报错，这样底层不需要改动，每次增加一个类实现该接口标准就可以也不需要编译officebetter 只需编译新添加的类。</p>
+<p>在设计方面，功能性的类，我们尽量去使用动态加载，而不使用静态加载，这样可以使程序更加灵活。</p>
+<p>＃获取方法信息<br>Class类的基本API使用<br>获取类的信息，包括类类型，成员函数，成员变量<br>Class c = int.class;<br>c.getName();</p>
+<p>＃获取成员变量构造函数信息<br>成员变量的反射<br>Filed[] fs = c.getDeclaredFields();<br>构造函数的反射<br>Constructor[] cs = c.geteclaredConstructors();</p>
+<p>＃方法的反射<br>获取方法<br>方法的名称和方法的参数列表才能唯一决定某个方法<br>方法反射的操作<br>method.invoke(对象，参数列表)</p>
+<p>＃通过反射了解集合泛型的本质<br>反射可以绕过编译<br>但Java中集合的泛型，是防止输入错误的，只在编译阶段有效，编译之后就无效了。</p>
 
       
     </div>
@@ -391,9 +379,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/reflect/" rel="tag"># reflect</a>
           
         </div>
       
@@ -406,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/18/ubuntu系统mysql修改数据存储位置/" rel="next" title="ubuntu mysql修改数据存储位置">
-                <i class="fa fa-chevron-left"></i> ubuntu mysql修改数据存储位置
+              <a href="/2019/06/07/jvm学习路线/" rel="next" title="jvm学习路线">
+                <i class="fa fa-chevron-left"></i> jvm学习路线
               </a>
             
           </div>
@@ -415,10 +403,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/02/Hexo多设备同步/" rel="prev" title="Hexo+Github多设备同步">
-                Hexo+Github多设备同步 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

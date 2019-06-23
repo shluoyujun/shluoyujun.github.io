@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ubuntu,python,">
+  <meta name="keywords" content="hexo,github,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1 安装virtualenv(1) 安装pip 123sudo apt-get updatesudo apt-get upgradesudo apt-get install python-pip">
-<meta name="keywords" content="ubuntu,python">
+<meta name="description" content="用Hexo+Github写博客最不方便的是，只能在一个设备（搭建Hexo）上进行博客更新。如果工作中用到多个设备，或者换了新电脑，项目迁移起来十分不便。其实它最主要的问题在于Hexo的配置文件是保存在本地的，因此可以用Github解决这个问题。主要思路是，用master分支保存博客内容相关文件，用另一个分支保存Hexo相关配置。">
+<meta name="keywords" content="hexo,github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python开发环境配置">
-<meta property="og:url" content="http://yoursite.com/2018/06/23/python开发环境配置/index.html">
+<meta property="og:title" content="Hexo+Github多设备同步">
+<meta property="og:url" content="http://yoursite.com/2019/06/02/Hexo+GIthub多设备同步/index.html">
 <meta property="og:site_name" content="Luo&#39;s space">
-<meta property="og:description" content="1 安装virtualenv(1) 安装pip 123sudo apt-get updatesudo apt-get upgradesudo apt-get install python-pip">
+<meta property="og:description" content="用Hexo+Github写博客最不方便的是，只能在一个设备（搭建Hexo）上进行博客更新。如果工作中用到多个设备，或者换了新电脑，项目迁移起来十分不便。其实它最主要的问题在于Hexo的配置文件是保存在本地的，因此可以用Github解决这个问题。主要思路是，用master分支保存博客内容相关文件，用另一个分支保存Hexo相关配置。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-02T12:29:18.800Z">
+<meta property="og:updated_time" content="2019-06-03T01:14:40.927Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python开发环境配置">
-<meta name="twitter:description" content="1 安装virtualenv(1) 安装pip 123sudo apt-get updatesudo apt-get upgradesudo apt-get install python-pip">
+<meta name="twitter:title" content="Hexo+Github多设备同步">
+<meta name="twitter:description" content="用Hexo+Github写博客最不方便的是，只能在一个设备（搭建Hexo）上进行博客更新。如果工作中用到多个设备，或者换了新电脑，项目迁移起来十分不便。其实它最主要的问题在于Hexo的配置文件是保存在本地的，因此可以用Github解决这个问题。主要思路是，用master分支保存博客内容相关文件，用另一个分支保存Hexo相关配置。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/23/python开发环境配置/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/02/Hexo+GIthub多设备同步/">
 
 
 
 
 
-  <title>python开发环境配置 | Luo's space</title>
+  <title>Hexo+Github多设备同步 | Luo's space</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/python开发环境配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/02/Hexo+GIthub多设备同步/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="luoyujun">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python开发环境配置</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo+Github多设备同步</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T22:03:36+08:00">
-                2018-06-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-02T16:32:29+08:00">
+                2019-06-02
               </time>
             
 
@@ -352,28 +352,13 @@
       
 
       
-        <p>1 安装virtualenv<br>(1) 安装pip</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line">sudo apt-get install python-pip</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>(2) 安装virtualenv</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-virtualenv</span><br></pre></td></tr></table></figure>
-<p>(3) 创建不同版本python环境<br>进入需要虚拟化环境的目录，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home/yujluo</span><br></pre></td></tr></table></figure>
-<p>运行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -p /usr/bin/python3 py3env</span><br></pre></td></tr></table></figure>
-<p>-p指定python版本 py3env为虚拟的环境目录</p>
-<p>激活环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /home/yujluo/py3env/activate</span><br></pre></td></tr></table></figure>
-<p>退出环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
-<p>2 使用jupyter notebook</p>
-<p>(1) 安装jupyter notebook<br>pip install jupyter notebook</p>
-<p>(2) 开启notebook<br>进入工作目录，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home/yujluo</span><br></pre></td></tr></table></figure>
-<p>开启服务<br>jupyter notebook</p>
-<p>(3) 远程访问jupyter notebook<br>最简单的是从本地建立一个ssh通道到服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh &lt;用户名&gt;@&lt;ip地址&gt; -L127.0.0.1:1234:127.0.0.1:8888</span><br></pre></td></tr></table></figure>
-<p>然后再本浏览器输入localhost:1234再在服务器上记下token输入就可以使用了。</p>
+        <p>用Hexo+Github写博客最不方便的是，只能在一个设备（搭建Hexo）上进行博客更新。如果工作中用到多个设备，或者换了新电脑，项目迁移起来十分不便。<br>其实它最主要的问题在于Hexo的配置文件是保存在本地的，因此可以用Github解决这个问题。主要思路是，用master分支保存博客内容相关文件，用另一个分支保存Hexo相关配置。</p>
+<a id="more"></a> 
+<p>1 在配置Hexo的机器上完成hexo配置迁移<br>（1）Git clone github项目并创建新的分支hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/shluoyujun/shluoyujun.github.io</span><br></pre></td></tr></table></figure></p>
+<p>（2）切换到hexo分支<br>（3）把Hexo配置文件夹里的文件全部拷贝到项目shluoyujun.github.io里<br>注意路径！！！例如hexo配置在/usr/hexo, github项目在/usr/shluoyujun.github.io<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -R /usr/hexo/* /usr/shluoyujun.github.io</span><br></pre></td></tr></table></figure></p>
+<p>删除主题模板的.git文件。如果在新设备上hexo g发现这个错误warn no layout ..,应该是主题模板文件丢了，从网上再下一份或者在hexo机器上之前的配置再拷贝一遍即可。<br>（4）把修改提交到github上</p>
+<p>2 在另外一台机器上配置<br>（1）搭建Hexo+Github的环境准备<br>安装nodejs,hexo,git<br>本地和github的连接. ssh key<br>（2）拉取github的代码，并切换到hexo分支<br>（3）在项目里npm install<br>现在就可以在新机器上写博客了，注意所有修改提交到hexo分支。</p>
+<p>参考<br><a href="https://www.cnblogs.com/LandWind/articles/8952362.html" target="_blank" rel="noopener">https://www.cnblogs.com/LandWind/articles/8952362.html</a><br><a href="https://blog.csdn.net/Monkey_LZL/article/details/60870891" target="_blank" rel="noopener">https://blog.csdn.net/Monkey_LZL/article/details/60870891</a><br><a href="https://www.jianshu.com/p/fceaf373d797" target="_blank" rel="noopener">https://www.jianshu.com/p/fceaf373d797</a></p>
 
       
     </div>
@@ -391,9 +376,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/github/" rel="tag"># github</a>
           
         </div>
       
@@ -406,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/18/ubuntu系统mysql修改数据存储位置/" rel="next" title="ubuntu mysql修改数据存储位置">
-                <i class="fa fa-chevron-left"></i> ubuntu mysql修改数据存储位置
+              <a href="/2019/06/02/Hexo多设备同步/" rel="next" title="Hexo+Github多设备同步">
+                <i class="fa fa-chevron-left"></i> Hexo+Github多设备同步
               </a>
             
           </div>
@@ -416,8 +401,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/02/Hexo多设备同步/" rel="prev" title="Hexo+Github多设备同步">
-                Hexo+Github多设备同步 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/07/jvm学习路线/" rel="prev" title="jvm学习路线">
+                jvm学习路线 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
