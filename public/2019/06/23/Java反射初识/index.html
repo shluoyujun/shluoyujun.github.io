@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址https://www.imooc.com/learn/199 ＃Class的使用Java中静态成员和基本数据类型不是对象，其他都是对象类是java.lang.Class类的实例对象 实例对象的三种获取方式Foo foo = new Foo();Class c1 = Foo.clas">
+<meta name="description" content="学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址https://www.imooc.com/learn/199">
 <meta name="keywords" content="java,reflect">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java反射初识">
 <meta property="og:url" content="http://yoursite.com/2019/06/23/Java反射初识/index.html">
 <meta property="og:site_name" content="Luo&#39;s space">
-<meta property="og:description" content="学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址https://www.imooc.com/learn/199 ＃Class的使用Java中静态成员和基本数据类型不是对象，其他都是对象类是java.lang.Class类的实例对象 实例对象的三种获取方式Foo foo = new Foo();Class c1 = Foo.clas">
+<meta property="og:description" content="学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址https://www.imooc.com/learn/199">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-23T14:09:23.849Z">
+<meta property="og:updated_time" content="2019-06-23T14:18:20.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java反射初识">
-<meta name="twitter:description" content="学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址https://www.imooc.com/learn/199 ＃Class的使用Java中静态成员和基本数据类型不是对象，其他都是对象类是java.lang.Class类的实例对象 实例对象的三种获取方式Foo foo = new Foo();Class c1 = Foo.clas">
+<meta name="twitter:description" content="学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址https://www.imooc.com/learn/199">
 
 
 
@@ -352,16 +352,15 @@
       
 
       
-        <p>学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址<a href="https://www.imooc.com/learn/199" target="_blank" rel="noopener">https://www.imooc.com/learn/199</a></p>
-<p>＃Class的使用<br>Java中静态成员和基本数据类型不是对象，其他都是对象<br>类是java.lang.Class类的实例对象</p>
+        <p>学习反射能更深入的了解Java的编译，运行阶段，泛型等。周末看了一个讲解反射的课程，觉得讲的不错，适合入门。课程地址<a href="https://www.imooc.com/learn/199" target="_blank" rel="noopener">https://www.imooc.com/learn/199</a><br><a id="more"></a><br>1 Class的使用<br>Java中静态成员和基本数据类型不是对象，其他都是对象<br>类是java.lang.Class类的实例对象</p>
 <p>实例对象的三种获取方式<br>Foo foo = new Foo();<br>Class c1 = Foo.class;<br>Class c2 = foo.getClass();<br>Class c3 = Class.forName(“xx.xx.xx.Foo”);<br>c1,c2,c3称为Foo类的类类型<br>可以通过类类型创建对象, 类需要有无参数的构造方法<br>Foo foo = (Foo)c1.newInsatance();</p>
-<p>＃动态加载类<br>区分编译和运行<br>静态加载类　<br>Foo foo = new Foo();<br>动态加载类<br>Class.forName(“类全称”）<br>编译时刻加载类是静态加载类，运行时刻加载类是动态加载类</p>
+<p>2 动态加载类<br>区分编译和运行<br>静态加载类　<br>Foo foo = new Foo();<br>动态加载类<br>Class.forName(“类全称”）<br>编译时刻加载类是静态加载类，运行时刻加载类是动态加载类</p>
 <p>如果一个类中涉及到多个类，此时将多个类向上提取接口（众类实现该接口），然后通过动态加载类的方式在运行的时候才创建对象不用的不需要编译就不会报错，这样底层不需要改动，每次增加一个类实现该接口标准就可以也不需要编译officebetter 只需编译新添加的类。</p>
 <p>在设计方面，功能性的类，我们尽量去使用动态加载，而不使用静态加载，这样可以使程序更加灵活。</p>
-<p>＃获取方法信息<br>Class类的基本API使用<br>获取类的信息，包括类类型，成员函数，成员变量<br>Class c = int.class;<br>c.getName();</p>
-<p>＃获取成员变量构造函数信息<br>成员变量的反射<br>Filed[] fs = c.getDeclaredFields();<br>构造函数的反射<br>Constructor[] cs = c.geteclaredConstructors();</p>
-<p>＃方法的反射<br>获取方法<br>方法的名称和方法的参数列表才能唯一决定某个方法<br>方法反射的操作<br>method.invoke(对象，参数列表)</p>
-<p>＃通过反射了解集合泛型的本质<br>反射可以绕过编译<br>但Java中集合的泛型，是防止输入错误的，只在编译阶段有效，编译之后就无效了。</p>
+<p>3 获取方法信息<br>Class类的基本API使用<br>获取类的信息，包括类类型，成员函数，成员变量<br>Class c = int.class;<br>c.getName();</p>
+<p>4 获取成员变量构造函数信息<br>成员变量的反射<br>Filed[] fs = c.getDeclaredFields();<br>构造函数的反射<br>Constructor[] cs = c.geteclaredConstructors();</p>
+<p>5 方法的反射<br>获取方法<br>方法的名称和方法的参数列表才能唯一决定某个方法<br>方法反射的操作<br>method.invoke(对象，参数列表)</p>
+<p>6 通过反射了解集合泛型的本质<br>反射可以绕过编译<br>但Java中集合的泛型，是防止输入错误的，只在编译阶段有效，编译之后就无效了。</p>
 
       
     </div>
@@ -403,6 +402,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/29/Hadoop生态圈介绍/" rel="prev" title="Hadoop生态圈介绍">
+                Hadoop生态圈介绍 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -481,7 +484,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -492,7 +495,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
