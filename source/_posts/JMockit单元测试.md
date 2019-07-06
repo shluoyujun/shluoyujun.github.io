@@ -16,6 +16,7 @@ JMockit有两种Mock方式
 * 录制方法预期行为
 * 真实调用
 * 验证录制行为被调用
+
 （2）State-oriented (MockUp<GenericType>)
 类似白盒，可以直接改写被Mock方法的内部逻辑
 

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Luo&#39;s space">
 <meta property="og:description" content="最近项目在进行代码质量的提升，而单元测试覆盖率是代码质量的标准之一，项目主要用到Jmockit进行测试用例的编写，借此机会全面学习一下。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-03T13:50:54.834Z">
+<meta property="og:updated_time" content="2019-07-06T12:50:39.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JMockit单元测试">
 <meta name="twitter:description" content="最近项目在进行代码质量的提升，而单元测试覆盖率是代码质量的标准之一，项目主要用到Jmockit进行测试用例的编写，借此机会全面学习一下。">
@@ -357,8 +357,9 @@
 <ul>
 <li>录制方法预期行为</li>
 <li>真实调用</li>
-<li>验证录制行为被调用<br>（2）State-oriented (MockUp<generictype>)<br>类似白盒，可以直接改写被Mock方法的内部逻辑</generictype></li>
+<li>验证录制行为被调用</li>
 </ul>
+<p>（2）State-oriented (MockUp<generictype>)<br>类似白盒，可以直接改写被Mock方法的内部逻辑</generictype></p>
 <p>1 @Injectable和@Tested<br>（1）@Injectable经常和@Tested一并使用<br>（2）@Tested表示被测试对象实例，只能作用于具体类，而不能作用于接口，因为一个接口可能有多个实现类，被测试的只能是实现改接口的某一具体类。<br>（3）如果该对象没有赋值，JMockit会去实例化它，若@Tested的构造函数有参数，则JMockit通过在测试属性&amp;测试参数中查找@Injectable修饰的Mocked对象注入@Tested对象的构造函数来实例化，不然，则用无参构造函数来实例化。除了构造函数的注入，JMockit还会通过属性查找的方式，把@Injectable对象注入到@Tested对象中。</p>
 <p>2 @Mocked和@Injectable的区别<br>两个注解都是告诉JMockit生成一个Mocked对象，但@Injectable只针对其修饰的实例，而@Mocked是针对其修饰类的所有实例<br>@Injectable对类的静态方法、构造函数没有影响</p>
 <p>3 MockUp和@Mock<br>MockUp+@Mock是一种常见的Mock方式，可以对某个类中的某个方法进行改写。</p>
@@ -411,6 +412,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/06/Java异常处理最佳实践/" rel="prev" title="Java异常处理最佳实践">
+                Java异常处理最佳实践 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -478,7 +483,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -500,7 +505,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
