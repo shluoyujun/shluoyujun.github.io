@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Luo&#39;s space">
 <meta property="og:description" content="作为Hadoop集群的运维工程师，学习Hadoop的目的是为了解业务。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-11T13:24:05.034Z">
+<meta property="og:updated_time" content="2019-07-11T13:37:20.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop生态圈介绍">
 <meta name="twitter:description" content="作为Hadoop集群的运维工程师，学习Hadoop的目的是为了解业务。">
@@ -353,7 +353,11 @@
 
       
         <p>作为Hadoop集群的运维工程师，学习Hadoop的目的是为了解业务。<br><a id="more"></a> </p>
-<h1 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h1><p>Hive是一个数据仓库，存储大数据，主要用来做OLAP分析.<br>Hive定义了一种类似SQL的查询语言（HQL），将SQL转化为MapReduce任务在HDFS上执行，通常用于离线分析。<br>数据的导入导出可以用工具sqoop，原理也是把命令翻译成MapReduce任务。</p>
+<h1 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h1><ul>
+<li>Hive是一个数据仓库，存储大数据，主要用来做OLAP分析.</li>
+<li>Hive定义了一种类似SQL的查询语言（HQL），将SQL转化为MapReduce任务在HDFS上执行，通常用于离线分析。</li>
+<li>数据的导入导出可以用工具sqoop，原理也是把命令翻译成MapReduce任务。</li>
+</ul>
 <h1 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h1><ul>
 <li>HBase是什么<br>HBase是构建在HDFS上的分布式数据库，适用于OLAP任务。</li>
 <li>列式存储<br>HBase使用列式存储，相当于把mysql每一行的每一列拆开，然后通过rowkey关联起来。HBase中每一行是key-value的形式。</li>
