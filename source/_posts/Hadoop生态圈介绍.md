@@ -8,9 +8,9 @@ tags: [Hadoop]
 作为Hadoop集群的运维工程师，学习Hadoop的目的是为了解业务。
 <!-- more --> 
 # Hive
-Hive是一个数据仓库，存储大数据，主要用来做OLAP分析.
-Hive定义了一种类似SQL的查询语言（HQL），将SQL转化为MapReduce任务在HDFS上执行，通常用于离线分析。
-数据的导入导出可以用工具sqoop，原理也是把命令翻译成MapReduce任务。
++ Hive是一个数据仓库，存储大数据，主要用来做OLAP分析.
++ Hive定义了一种类似SQL的查询语言（HQL），将SQL转化为MapReduce任务在HDFS上执行，通常用于离线分析。
++ 数据的导入导出可以用工具sqoop，原理也是把命令翻译成MapReduce任务。
 
 # HBase
 + HBase是什么
@@ -27,8 +27,9 @@ HBase提供三种查询方式：1）全表扫描，scan；2）根据一个rowkey
 + 数据修改
 可进行数据修改和删除
 + HBase架构
-master-slave
+HMaster, HRegionServer, zookeeper
 + HRegionServer架构
+HLog, WAL, MemStore, StoreFile
 Region是HBase在rowkey上的切分，每个Region都可以通过startKey和endKey来确定rowkey范围，一个HRegionServer可能有多个Region。
 rowkey需考虑散列性
 + 读取和写入流程

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Luo&#39;s space">
 <meta property="og:description" content="作为Hadoop集群的运维工程师，学习Hadoop的目的是为了解业务。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-09T15:38:28.656Z">
+<meta property="og:updated_time" content="2019-07-11T13:24:05.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop生态圈介绍">
 <meta name="twitter:description" content="作为Hadoop集群的运维工程师，学习Hadoop的目的是为了解业务。">
@@ -361,8 +361,8 @@
 <li>rowkey的设计<br>HBase只能通过rowkey来查询，rowkey底层是B+数存储。<br>HBase提供三种查询方式：1）全表扫描，scan；2）根据一个rowkey查询；3）根据rowkey过滤的范围查询</li>
 <li>LSM三层存储模型<br>数据先写到内存MemStore中，内存达到一定阈值再刷写到硬盘StoreFile中，再满足一定条件时，小的StoreFile会合并为大的StoreFile</li>
 <li>数据修改<br>可进行数据修改和删除</li>
-<li>HBase架构<br>master-slave</li>
-<li>HRegionServer架构<br>Region是HBase在rowkey上的切分，每个Region都可以通过startKey和endKey来确定rowkey范围，一个HRegionServer可能有多个Region。<br>rowkey需考虑散列性</li>
+<li>HBase架构<br>HMaster, HRegionServer, zookeeper</li>
+<li>HRegionServer架构<br>HLog, WAL, MemStore, StoreFile<br>Region是HBase在rowkey上的切分，每个Region都可以通过startKey和endKey来确定rowkey范围，一个HRegionServer可能有多个Region。<br>rowkey需考虑散列性</li>
 <li>读取和写入流程</li>
 </ul>
 
