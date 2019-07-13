@@ -7,7 +7,7 @@ tags: [java, jvm]
 ---
 Java内存模型的相关内容如图所示：
 <!-- more --> 
-<img src="/img/java内存模型.png">
+<img src="/img/Java内存模型.png">
 1 内存模型特征
 原子性
 * 除了long,double类型以外，Java的基本数据类型的读写都是原子性的
