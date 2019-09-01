@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="linux,mysql,">
+  <meta name="keywords" content="Hadoop,linux,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="123sudo apt-get install mysql-serversudo apt-get install mysql-clientsudo apt-get install libmysqlclient-dev">
-<meta name="keywords" content="linux,mysql">
+<meta name="description" content="ldap+kerberos是hadoop这种多租户平台最常用的集中账号管理，认证和授权系统，本文对基本概念进行简单梳理。">
+<meta name="keywords" content="Hadoop,linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu安装mysql并开启远程连接">
-<meta property="og:url" content="http://yoursite.com/2017/06/16/ubuntu安装mysql并开启远程连接/index.html">
+<meta property="og:title" content="初识sssd,ldap和kerberos">
+<meta property="og:url" content="http://yoursite.com/2019/08/01/初识sssd-ldap和kerberos/index.html">
 <meta property="og:site_name" content="Luo&#39;s space">
-<meta property="og:description" content="123sudo apt-get install mysql-serversudo apt-get install mysql-clientsudo apt-get install libmysqlclient-dev">
+<meta property="og:description" content="ldap+kerberos是hadoop这种多租户平台最常用的集中账号管理，认证和授权系统，本文对基本概念进行简单梳理。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-02T12:29:18.801Z">
+<meta property="og:updated_time" content="2019-09-01T13:46:13.749Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu安装mysql并开启远程连接">
-<meta name="twitter:description" content="123sudo apt-get install mysql-serversudo apt-get install mysql-clientsudo apt-get install libmysqlclient-dev">
+<meta name="twitter:title" content="初识sssd,ldap和kerberos">
+<meta name="twitter:description" content="ldap+kerberos是hadoop这种多租户平台最常用的集中账号管理，认证和授权系统，本文对基本概念进行简单梳理。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/16/ubuntu安装mysql并开启远程连接/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/01/初识sssd-ldap和kerberos/">
 
 
 
 
 
-  <title>ubuntu安装mysql并开启远程连接 | Luo's space</title>
+  <title>初识sssd,ldap和kerberos | Luo's space</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/16/ubuntu安装mysql并开启远程连接/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/初识sssd-ldap和kerberos/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="luoyujun">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ubuntu安装mysql并开启远程连接</h1>
+          <h1 class="post-title" itemprop="name headline">初识sssd,ldap和kerberos</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-16T22:53:19+08:00">
-                2017-06-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-01T21:52:57+08:00">
+                2019-08-01
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/environment/" itemprop="url" rel="index">
-                    <span itemprop="name">environment</span>
+                  <a href="/categories/security/" itemprop="url" rel="index">
+                    <span itemprop="name">security</span>
                   </a>
                 </span>
 
@@ -352,17 +352,17 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt-get install mysql-client</span><br><span class="line">sudo apt-get install libmysqlclient-dev</span><br></pre></td></tr></table></figure>
-<a id="more"></a> 
-<p>安装过程中会提示设置密码什么的，注意设置了不要忘了，安装完成之后可以使用如下命令来检查是否安装成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -tap | grep mysql</span><br></pre></td></tr></table></figure></p>
-<p>通过上述命令检查之后，如果看到有mysql 的socket处于 listen 状态则表示安装成功。<br>登陆mysql数据库可以通过如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></p>
-<p>开启远程服务</p>
-<p>例如，你想root使用123456从任何主机连接到mysql服务器。</p>
-<p>1 首先，赋给root用户权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos; WITH GRANT OPTION;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure></p>
-<p>2 修改my.cnf文件</p>
-<p>编辑文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/mysql/my.cnf</span><br></pre></td></tr></table></figure></p>
-<p>注释掉这句，127.0.0.1是只允许本地访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#bind-address = 127.0.0.1</span><br></pre></td></tr></table></figure></p>
-<p>3 重启mysql服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/mysql restart</span><br></pre></td></tr></table></figure></p>
+        <p>ldap+kerberos是hadoop这种多租户平台最常用的集中账号管理，认证和授权系统，本文对基本概念进行简单梳理。<br><a id="more"></a> </p>
+<p>ldap<br>存储租户账号</p>
+<p>kerberos<br>存储租户密码及组别关系<br>    key distribution center(KDC)<br>    application server<br>    client</p>
+<p>principal</p>
+<p>完整的Principal表示方法:<br><a href="mailto:e1vis/admin@server116.example.com" target="_blank" rel="noopener">e1vis/admin@server116.example.com</a><br>用户  描述   Realm</p>
+<p>System Security Services Dameon (SSSD)<br>一个守护进程，该进程可以用来访问多种验证服务器，如LDAP，Kerberos等，并提供授权。SSSD是介于本地用户和数据存储之间的进程，本地客户端首先连接SSSD，再由SSSD联系外部资源提供者(一台远程服务器)</p>
+<ul>
+<li>避免了本地每个客户端程序对认证服务器大量连接，所有本地程序仅联系SSSD，由SSSD连接认证服务器或SSSD缓存，有效的降低了负载。</li>
+<li>允许离线授权。SSSD可以缓存远程服务器的用户认证身份，这允许在远程认证服务器宕机是，继续成功授权用户访问必要的资源。</li>
+</ul>
+<p>References<br><a href="https://blog.csdn.net/liu16659/article/details/80997333" target="_blank" rel="noopener">https://blog.csdn.net/liu16659/article/details/80997333</a> </p>
 
       
     </div>
@@ -380,9 +380,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/Hadoop/" rel="tag"># Hadoop</a>
           
-            <a href="/tags/mysql/" rel="tag"># mysql</a>
+            <a href="/tags/linux/" rel="tag"># linux</a>
           
         </div>
       
@@ -395,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/16/ubuntu14-04安装fasttext/" rel="next" title="ubuntu14.04安装fasttext">
-                <i class="fa fa-chevron-left"></i> ubuntu14.04安装fasttext
+              <a href="/2019/07/09/Java内存模型/" rel="next" title="Java内存模型">
+                <i class="fa fa-chevron-left"></i> Java内存模型
               </a>
             
           </div>
@@ -405,8 +405,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/18/mysql批量插入数据/" rel="prev" title="mysql批量插入数据">
-                mysql批量插入数据 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/01/emptydir与hostpath/" rel="prev" title="emptydir与hostpath">
+                emptydir与hostpath <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

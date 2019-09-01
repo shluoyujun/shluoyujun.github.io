@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="linux,mysql,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,14 @@
 
 
 
-<meta name="description" content="123sudo apt-get install mysql-serversudo apt-get install mysql-clientsudo apt-get install libmysqlclient-dev">
-<meta name="keywords" content="linux,mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu安装mysql并开启远程连接">
-<meta property="og:url" content="http://yoursite.com/2017/06/16/ubuntu安装mysql并开启远程连接/index.html">
+<meta property="og:title" content="emptydir与hostpath">
+<meta property="og:url" content="http://yoursite.com/2019/09/01/emptydir与hostpath/index.html">
 <meta property="og:site_name" content="Luo&#39;s space">
-<meta property="og:description" content="123sudo apt-get install mysql-serversudo apt-get install mysql-clientsudo apt-get install libmysqlclient-dev">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-02T12:29:18.801Z">
+<meta property="og:updated_time" content="2019-09-01T07:41:19.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu安装mysql并开启远程连接">
-<meta name="twitter:description" content="123sudo apt-get install mysql-serversudo apt-get install mysql-clientsudo apt-get install libmysqlclient-dev">
+<meta name="twitter:title" content="emptydir与hostpath">
 
 
 
@@ -120,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/16/ubuntu安装mysql并开启远程连接/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/01/emptydir与hostpath/">
 
 
 
 
 
-  <title>ubuntu安装mysql并开启远程连接 | Luo's space</title>
+  <title>emptydir与hostpath | Luo's space</title>
   
 
 
@@ -263,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/16/ubuntu安装mysql并开启远程连接/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/emptydir与hostpath/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="luoyujun">
@@ -280,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ubuntu安装mysql并开启远程连接</h1>
+          <h1 class="post-title" itemprop="name headline">emptydir与hostpath</h1>
         
 
         <div class="post-meta">
@@ -292,8 +288,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-16T22:53:19+08:00">
-                2017-06-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-01T15:41:19+08:00">
+                2019-09-01
               </time>
             
 
@@ -302,28 +298,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/environment/" itemprop="url" rel="index">
-                    <span itemprop="name">environment</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -352,18 +326,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt-get install mysql-client</span><br><span class="line">sudo apt-get install libmysqlclient-dev</span><br></pre></td></tr></table></figure>
-<a id="more"></a> 
-<p>安装过程中会提示设置密码什么的，注意设置了不要忘了，安装完成之后可以使用如下命令来检查是否安装成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -tap | grep mysql</span><br></pre></td></tr></table></figure></p>
-<p>通过上述命令检查之后，如果看到有mysql 的socket处于 listen 状态则表示安装成功。<br>登陆mysql数据库可以通过如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></p>
-<p>开启远程服务</p>
-<p>例如，你想root使用123456从任何主机连接到mysql服务器。</p>
-<p>1 首先，赋给root用户权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos; WITH GRANT OPTION;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure></p>
-<p>2 修改my.cnf文件</p>
-<p>编辑文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/mysql/my.cnf</span><br></pre></td></tr></table></figure></p>
-<p>注释掉这句，127.0.0.1是只允许本地访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#bind-address = 127.0.0.1</span><br></pre></td></tr></table></figure></p>
-<p>3 重启mysql服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/mysql restart</span><br></pre></td></tr></table></figure></p>
-
+        
       
     </div>
     
@@ -378,14 +341,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/linux/" rel="tag"># linux</a>
-          
-            <a href="/tags/mysql/" rel="tag"># mysql</a>
-          
-        </div>
-      
 
       
       
@@ -395,8 +350,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/16/ubuntu14-04安装fasttext/" rel="next" title="ubuntu14.04安装fasttext">
-                <i class="fa fa-chevron-left"></i> ubuntu14.04安装fasttext
+              <a href="/2019/08/01/初识sssd-ldap和kerberos/" rel="next" title="初识sssd,ldap和kerberos">
+                <i class="fa fa-chevron-left"></i> 初识sssd,ldap和kerberos
               </a>
             
           </div>
@@ -404,10 +359,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/18/mysql批量插入数据/" rel="prev" title="mysql批量插入数据">
-                mysql批量插入数据 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
