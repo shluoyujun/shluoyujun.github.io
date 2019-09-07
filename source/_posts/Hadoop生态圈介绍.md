@@ -34,4 +34,21 @@ Region是HBase在rowkey上的切分，每个Region都可以通过startKey和endK
 rowkey需考虑散列性
 + 读取和写入流程
 
+# Zookeeper
++ 什么是Zookeeper
+Zookeeper是针对分布式系统的协调服务（本身就是分布式应用程序），优点是可靠，可扩展，高性能。
++ 数据结构
+ZooKeeper的数据结构，跟Unix文件系统非常类似，可以看做是一颗树，每个节点叫做ZNode。每一个节点可以通过路径来标识。
+ZooKeeper的节点我们称之为Znode，Znode分为两种类型：
+短暂/临时(Ephemeral)：当客户端和服务端断开连接后，所创建的Znode(节点)会自动删除
+持久(Persistent)：当客户端和服务端断开连接后，所创建的Znode(节点)不会删除
++ Ｚookeeper的作用
+统一配置管理
+统一命名服务
+分布式锁
+集群管理
+
+references
+https://lxkaka.wang/2017/12/21/zookeeper/ zk的简单实践
+
 

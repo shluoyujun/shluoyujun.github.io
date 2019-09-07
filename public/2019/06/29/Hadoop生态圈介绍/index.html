@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Luo&#39;s space">
 <meta property="og:description" content="作为Hadoop集群的运维工程师，学习Hadoop的目的是为了解业务。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-11T13:37:20.161Z">
+<meta property="og:updated_time" content="2019-09-07T07:47:13.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop生态圈介绍">
 <meta name="twitter:description" content="作为Hadoop集群的运维工程师，学习Hadoop的目的是为了解业务。">
@@ -369,6 +369,12 @@
 <li>HRegionServer架构<br>HLog, WAL, MemStore, StoreFile<br>Region是HBase在rowkey上的切分，每个Region都可以通过startKey和endKey来确定rowkey范围，一个HRegionServer可能有多个Region。<br>rowkey需考虑散列性</li>
 <li>读取和写入流程</li>
 </ul>
+<h1 id="Zookeeper"><a href="#Zookeeper" class="headerlink" title="Zookeeper"></a>Zookeeper</h1><ul>
+<li>什么是Zookeeper<br>Zookeeper是针对分布式系统的协调服务（本身就是分布式应用程序），优点是可靠，可扩展，高性能。</li>
+<li>数据结构<br>ZooKeeper的数据结构，跟Unix文件系统非常类似，可以看做是一颗树，每个节点叫做ZNode。每一个节点可以通过路径来标识。<br>ZooKeeper的节点我们称之为Znode，Znode分为两种类型：<br>短暂/临时(Ephemeral)：当客户端和服务端断开连接后，所创建的Znode(节点)会自动删除<br>持久(Persistent)：当客户端和服务端断开连接后，所创建的Znode(节点)不会删除</li>
+<li>Ｚookeeper的作用<br>统一配置管理<br>统一命名服务<br>分布式锁<br>集群管理</li>
+</ul>
+<p>references<br><a href="https://lxkaka.wang/2017/12/21/zookeeper/" target="_blank" rel="noopener">https://lxkaka.wang/2017/12/21/zookeeper/</a> zk的简单实践</p>
 
       
     </div>
@@ -543,7 +549,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hive"><span class="nav-number">1.</span> <span class="nav-text">Hive</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HBase"><span class="nav-number">2.</span> <span class="nav-text">HBase</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hive"><span class="nav-number">1.</span> <span class="nav-text">Hive</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HBase"><span class="nav-number">2.</span> <span class="nav-text">HBase</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zookeeper"><span class="nav-number">3.</span> <span class="nav-text">Zookeeper</span></a></li></ol></div>
             
 
           </div>
