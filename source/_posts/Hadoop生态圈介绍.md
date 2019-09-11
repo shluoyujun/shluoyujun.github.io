@@ -11,6 +11,14 @@ tags: [Hadoop]
 + Hive是一个数据仓库，存储大数据，主要用来做OLAP分析.
 + Hive定义了一种类似SQL的查询语言（HQL），将SQL转化为MapReduce任务在HDFS上执行，通常用于离线分析。
 + 数据的导入导出可以用工具sqoop，原理也是把命令翻译成MapReduce任务。
++ Hive架构
+client: 用户接口，hive shell/java/webUI
+metastore: 元数据信息，包括表名，表所属数据库，表拥有者，列、分区字段，表类型等
+driver: 包括解析器（SQL parser），编译器（physical plan），优化器（Query Optimizer），执行器（Execution）- MR/Spark
+Hadoop: 存储数据
++ Hive组件
+HiveServer/HiveServer2
+HiveMetastore
 
 # HBase
 + HBase是什么

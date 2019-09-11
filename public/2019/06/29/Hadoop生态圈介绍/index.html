@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Luo&#39;s space">
 <meta property="og:description" content="作为Hadoop集群的运维工程师，学习Hadoop的目的是为了解业务。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-07T07:47:13.597Z">
+<meta property="og:updated_time" content="2019-09-11T14:48:23.210Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop生态圈介绍">
 <meta name="twitter:description" content="作为Hadoop集群的运维工程师，学习Hadoop的目的是为了解业务。">
@@ -357,6 +357,8 @@
 <li>Hive是一个数据仓库，存储大数据，主要用来做OLAP分析.</li>
 <li>Hive定义了一种类似SQL的查询语言（HQL），将SQL转化为MapReduce任务在HDFS上执行，通常用于离线分析。</li>
 <li>数据的导入导出可以用工具sqoop，原理也是把命令翻译成MapReduce任务。</li>
+<li>Hive架构<br>client: 用户接口，hive shell/java/webUI<br>metastore: 元数据信息，包括表名，表所属数据库，表拥有者，列、分区字段，表类型等<br>driver: 包括解析器（SQL parser），编译器（physical plan），优化器（Query Optimizer），执行器（Execution）- MR/Spark<br>Hadoop: 存储数据</li>
+<li>Hive组件<br>HiveServer/HiveServer2<br>HiveMetastore</li>
 </ul>
 <h1 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h1><ul>
 <li>HBase是什么<br>HBase是构建在HDFS上的分布式数据库，适用于OLAP任务。</li>
